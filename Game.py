@@ -3,12 +3,12 @@ import os
 import numpy as np
 img = cv2.imread("463300893_532633549720211_3262292791778244347_n.jpg", cv2.IMREAD_GRAYSCALE)
 _, img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
-img = cv2.resize(img, (int(1580/3), int(2048/3)))
+img = cv2.resize(img, (int(img.shape[1]/3), int(img.shape[0]/3)))
 font = cv2.FONT_HERSHEY_SIMPLEX
 n = img.shape[0]
 m = img.shape[1]
 z = 1 #rgb
-newImg = np.ones((n, m, z)) * 255
+newImg = np.full((n, m, z), 255, dtype=np.uint8)
 cnt = 0
 show = 20
 for i in range(0, n, 4):
