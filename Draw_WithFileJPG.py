@@ -33,7 +33,7 @@ else:
             for j in range(0, m, 4):
                 if img_mat[i, j] == 0:
                     newImg = cv2.putText(newImg, 'Wibu', (j, i), fontFace=cv2.FONT_HERSHEY_SIMPLEX,
-                                        fontScale=0.2, color=(0,0,0), thickness=1, lineType=cv2.LINE_AA)
+                                        fontScale=0.1, color=(0,0,0), thickness=1, lineType=cv2.LINE_AA)
                     cnt += 1
                     if cnt % show == 0:
                         cv2.imshow("Wibu", newImg)
