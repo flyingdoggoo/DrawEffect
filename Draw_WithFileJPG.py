@@ -21,7 +21,7 @@ else:
         print("Unable to read image.")
     else:
         _, img_mat = cv2.threshold(img_mat, 127, 255, cv2.THRESH_BINARY)
-        img_mat = cv2.resize(img_mat, (int(img_mat.shape[1] / 3), int(img_mat.shape[0] / 3)))
+        img_mat = cv2.resize(img_mat, (int(img_mat.shape[1] / 2), int(img_mat.shape[0] / 2)))
         font = cv2.FONT_HERSHEY_SIMPLEX
         n, m = img_mat.shape
         z = 1
