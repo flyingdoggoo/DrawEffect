@@ -27,18 +27,16 @@ else:
         z = 1
         newImg = np.full((n, m, z), 255, dtype=np.uint8)
         cnt = 0
-        show = 20
+        show = 80
 
-        for i in range(0, n, 4):
-            for j in range(0, m, 4):
+        for i in range(0, n, 2):
+            for j in range(0, m, 2):
                 if img_mat[i, j] == 0:
-                    newImg = cv2.putText(newImg, 'Wibu', (j, i), fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                    newImg = cv2.putText(newImg, 'AAA', (j, i), fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                                         fontScale=0.1, color=(0,0,0), thickness=1, lineType=cv2.LINE_AA)
                     cnt += 1
                     if cnt % show == 0:
-                        cv2.imshow("Wibu", newImg)
+                        cv2.imshow("AAA", newImg)
                         cv2.waitKey(1)
-
-        cv2.imshow("Wibu", newImg)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
